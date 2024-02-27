@@ -38,14 +38,14 @@
     <div id="client-form" v-show="showClientForm">
       <span v-on:click="hideForm"><strong>x</strong></span>
       <h2 class="mb-4">Please fill in your information</h2>
-      <form>
+      <form v-on:submit.prevent="submitForm">
         <div class="form-group">
           <label for="company-number">Company Registration Number</label>
-          <input type="number" class="form-control" id="company-number" placeholder="Enter the company number">
+          <input v-model="companyNumber" type="number" class="form-control" id="company-number" placeholder="Enter the company number">
         </div>
         <div class="form-group">
           <label for="name">Contact Full Name</label>
-          <input type="text" class="form-control" id="name" placeholder="John Smith">
+          <input v-model="contactName" type="text" class="form-control" id="name" placeholder="John Smith">
         </div>
         <button type="submit" class="btn btn-pink">Submit</button>
       </form>
