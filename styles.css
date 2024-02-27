@@ -1,0 +1,58 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+#client-form {
+  margin: 100px auto;
+  width: 550px;
+  border: 1px solid rgba(128, 128, 128, 0.384);
+  padding: 25px 25px 0px 25px;
+  border-radius: 7px;
+  position: relative;
+}
+
+#client-form span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+.btn-pink {
+  color: #fff;
+  background-color: #FF3366;
+  border-color: #FF3366;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: #cc294d;
+  border-color: #cc294d;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 10px 10px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.privacy-statement {
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+[v-cloak] {
+  display: none
+}
