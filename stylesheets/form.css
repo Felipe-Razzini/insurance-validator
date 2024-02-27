@@ -1,11 +1,19 @@
 #client-form {
-  margin: 100px auto;
   width: 550px;
+  background-color: white;
   border: 1px solid rgba(128, 128, 128, 0.384);
   padding: 25px 25px 0px 25px;
   border-radius: 7px;
-  position: relative;
-  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+#client-form.show {
+  opacity: 1;
 }
 
 #client-form span {
