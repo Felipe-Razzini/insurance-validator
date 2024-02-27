@@ -1,0 +1,43 @@
+#landing-page {
+  display: flex;
+  height: 100vh;
+}
+
+.left-column {
+  flex: 65%;
+  background-image: url('../assets/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.right-column {
+  flex: 35%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.right-column h2 {
+  margin-bottom: 25px;
+}
+
+.right-column p {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.right-column-form {
+  text-align: center;
+}
+
+.logo {
+  width: 180px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 20px 0;
+}

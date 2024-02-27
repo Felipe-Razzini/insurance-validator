@@ -1,0 +1,28 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+.btn {
+  padding: 10px 10px;
+}
+
+.btn-pink {
+  color: #fff;
+  background-color: #FF3366;
+  border-color: #FF3366;
+  transition: 0.3s ease;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: #cc294d;
+  border-color: #cc294d;
+}
+
+[v-cloak] {
+  display: none
+}
