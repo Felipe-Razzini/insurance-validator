@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       showClientForm: false,
+      isLoading: false
     }
   },
   methods: {

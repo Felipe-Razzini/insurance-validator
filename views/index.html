@@ -50,8 +50,11 @@
           <input type="text" class="form-control" name="contact_name" id="name" placeholder="Ex: John Smith" required>
           <!-- v-model="contactName" -->
         </div>
-        <button type="submit" class="btn btn-pink">Submit</button>
+        <button v-on:click="isLoading = true" type="submit" class="btn btn-pink">Submit</button>
       </form>
+      <div class="loading-overlay" v-show="isLoading">
+        <div class="loading-spinner"></div>
+      </div>
       <p class="privacy-statement">By using this service you are agreeing to our <strong>terms of use</strong> and <strong>privacy notice</strong>.</p>
     </div>
   </div>
