@@ -1,6 +1,5 @@
 # Superscript Coding Test - Felipe Razzini
 
-## Description
 This is a simple application that allows users to check if their company qualifies for insurance. It uses Ruby, HTML, CSS, Vue JS, and Sinatra for the server.
 
 ## Prerequisites
@@ -31,6 +30,7 @@ Please note that the `.env` file is included in the `.gitignore` file, so it won
 ## Usage
 1. Start the Sinatra server: `ruby app.rb`
 2. Open your web browser and navigate to: `http://localhost:4567`
+3. If you've made changes to the code and they don't seem to be reflected in the application, or if the application is behaving unexpectedly, try stopping the Sinatra server (press `Ctrl+C` in the terminal where the server is running) and starting it again with `ruby app.rb`.
 
 ## License
 This project is licensed under the MIT License.
