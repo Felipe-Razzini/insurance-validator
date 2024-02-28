@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem 'install bundler'
 gem 'sinatra'
 gem 'dotenv'
 gem 'rest-client'
