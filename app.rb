@@ -45,8 +45,17 @@ post '/submit' do
 
   @message = (
     if !has_insolvency_history && user_is_director
-      puts "Great, #{company_name} has no insolvency history and #{normalized_contact_name} is a director!"
+      puts "Great, #{company_name} has no insolvency history and #{contact_name} is a director!"
       'Great, your company qualifies for insurance! Our team will get in touch with you soon!'
+    elsif !has_insolvency_history && !user_is_director
+      puts "#{company_name} has no insolvency history, but #{contact_name} is NOT a director!"
+      'Great, your company qualifies for insurance, but we need to confirm a few details! Our team will get in touch with you soon!'
+    elsif has_insolvency_history && user_is_director
+      puts "#{company_name} has insolvency history, but #{contact_name} is a director!"
+      'Great, your company qualifies for insurance, but we need to confirm a few details! Our team will get in touch with you soon!'
+    elsif has_insolvency_history && !user_is_director
+      puts "#{company_name} has insolvency history and #{contact_name} is NOT a director!"
+      'Sorry, there seems to be an error. Our team will get in touch with you soon!'
     else
       puts 'Oops, something went wrong!'
       'Oops, something went wrong!'
