@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/form.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/landing_page.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/form.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landing_page.css">
   <script type="importmap">
     {
       "imports": {
@@ -26,7 +26,7 @@
         <!-- This div has a background image -->
       </div>
       <div class="right-column">
-        <img class="logo" src="assets/logo.png" alt="logo">
+        <img class="logo" src="../assets/logo.png" alt="logo">
         <div class="right-column-form">
           <h2>Seeking insurance solutions?</h2>
           <button class="btn btn-pink" v-on:click="displayForm">Begin with an assessment now</button>
@@ -38,14 +38,17 @@
     <div id="client-form" v-show="showClientForm">
       <span v-on:click="hideForm"><strong>x</strong></span>
       <h2 class="mb-4">Please fill in your information</h2>
-      <form v-on:submit.prevent="submitForm">
+      <form action="/submit" method="post">
+        <!-- v-on:submit.prevent="submitForm"-->
         <div class="form-group">
           <label for="company-number">Company Registration Number</label>
-          <input v-model="companyNumber" type="number" class="form-control" id="company-number" placeholder="Enter the company number">
+          <input type="text" class="form-control" name="company_number" id="company-number" placeholder="Enter the company number" required>
+          <!-- v-model="companyNumber" -->
         </div>
         <div class="form-group">
           <label for="name">Contact Full Name</label>
-          <input v-model="contactName" type="text" class="form-control" id="name" placeholder="John Smith">
+          <input type="text" class="form-control" name="contact_name" id="name" placeholder="John Smith" required>
+          <!-- v-model="contactName" -->
         </div>
         <button type="submit" class="btn btn-pink">Submit</button>
       </form>
@@ -55,6 +58,6 @@
   <!-- <div v-cloak>
     {{ message }}
   </div> -->
-  <script src="app.js" type="module"></script>
+  <script src="/javascripts/app.js" type="module"></script>
 </body>
 </html>
