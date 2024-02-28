@@ -43,11 +43,15 @@ post '/submit' do
     officer['name'] == normalized_contact_name && officer['officer_role'] == 'director'
   end
 
-  if has_insolvency_history == false && user_is_director == true
-    puts "Great, #{company_name} has no insolvency history and #{normalized_contact_name} is a director!"
-  else
-    puts 'Too bad, error ahead'
-  end
-  user_data.to_json
-  company_data.to_json
+  @message = (
+    if !has_insolvency_history && user_is_director
+      puts "Great, #{company_name} has no insolvency history and #{normalized_contact_name} is a director!"
+      'Great, your company qualifies for insurance! Our team will get in touch with you soon!'
+    else
+      puts 'Oops, something went wrong!'
+      'Oops, something went wrong!'
+    end
+  )
+
+  erb :message
 end
