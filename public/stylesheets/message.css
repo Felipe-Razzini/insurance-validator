@@ -17,3 +17,11 @@ h2 {
   font-weight: 800;
   color: #FF3366;
 }
+
+.success {
+  color: green;
+}
+
+.error {
+  color: #FF3366;
+}

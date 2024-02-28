@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="message-container mb-5">
-    <h2><%= @message %></h2>
+    <h2 class="<%= @message[:status] %>"><%= @message[:text] %></h2>
   </div>
   <a class="btn btn-pink" href="/">Back to home</a>
 </body>
