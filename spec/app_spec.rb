@@ -1,17 +1,17 @@
-# require 'rspec'
-# require 'rack/test'
-# require_relative '../app'
+# spec/app_spec.rb
+require_relative '../app'
+require 'rack/test'
 
-# describe 'GET /' do
-#   include Rack::Test::Methods
+describe 'Superscript Coding Test' do
+  include Rack::Test::Methods
 
-#   def app
-#     Sinatra::Application
-#   end
+  def app
+    Sinatra::Application
+  end
 
-#   it 'returns a 200 status code and "Hello, World!"' do
-#     get '/'
-#     expect(last_response).to be_ok
-#     expect(last_response.body).to include('Hello, World!')
-#   end
-# end
+  it 'should respond with an error if company_number is not valid' do
+    post '/', { company_number: 'invalid', contact_name: 'John Doe' }
+    expect(last_response.status).to eq(400)
+    expect(last_response.body).to include('company_number is not valid')
+  end
+end

@@ -8,4 +8,3 @@ gem 'dotenv'
 gem 'rest-client'
 gem 'webmock', require: false
 gem 'rack-test'
-gem 'nokogiri'

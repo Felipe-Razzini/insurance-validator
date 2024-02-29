@@ -19,11 +19,11 @@ createApp({
     toggleFormVisibility(isVisible) {
       const form = document.getElementById('client-form');
       if (isVisible) {
-          setTimeout(() => {
-              form.classList.add('show');
-          }, 0);
+        setTimeout(() => {
+          form.classList.add('show');
+        }, 0);
       } else {
-          form.classList.remove('show');
+        form.classList.remove('show');
       }
     },
   }
