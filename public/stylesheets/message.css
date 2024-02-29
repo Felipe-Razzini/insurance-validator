@@ -8,20 +8,39 @@ body {
   margin: 0;
 }
 
+.big-container {
+  width: 100vw;
+  margin: 2rem;
+}
+
 .message-container {
   width: 600px;
   text-align: center;
+  margin: 2rem auto;
+}
+
+.message-container i {
+  font-size: 6rem;
+}
+
+.message-container > * {
+  margin: 2rem 0;
+}
+
+.message-container p {
+  font-size: 16px;
 }
 
 h2 {
   font-weight: 800;
-  color: #FF3366;
 }
 
 .success {
-  color: green;
+  background: #33FFCC;
+  color: black;
 }
 
-.error {
-  color: #FF3366;
+.warning {
+  background: #f36;
+  color: white;
 }
