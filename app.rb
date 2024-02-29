@@ -107,7 +107,7 @@ post '/submit' do
         text: 'Sorry, there seems to be an error.',
         status: 'warning'
       }
-      puts "Superscript should not provide insurance because #{company_name} has too many red flags"
+      puts "Superscript should not provide insurance because #{company_name} has too many red flag. The credit score is #{company_score}!"
     end
   else
     @message = {

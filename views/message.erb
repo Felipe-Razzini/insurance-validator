@@ -16,14 +16,23 @@
     <a href="/"><img class="logo" src="../assets/logo.png" alt="logo"></a>
     <div class="message-container">
       <% if @message[:status] == 'success' %>
-      <i class="fa-regular fa-circle-check fa-2xl" style="color: #000000;"></i>
-       <% end %>
-      <h2 class="<%= @message[:status] %>"><%= @message[:text] %></h2>
-      <% if @message[:status] == 'success' %>
-      <p> In the meantime, feel free to provide additional information about your insurance needs. </p>
+        <i class="fa-regular fa-circle-check fa-2xl" style="color: #000000;"></i>
+        <h2 class="<%= @message[:status] %>"><%= @message[:text] %></h2>
+        <p> In the meantime, feel free to provide additional information about your insurance needs. </p>
+      <% elsif @message[:status] == 'pending' %>
+        <i class="fa-solid fa-spinner fa-2xl" style="color: #000000;"></i>
+        <h2 class="<%= @message[:status] %>"><%= @message[:text] %></h2>
+        <p> In the meantime, feel free to provide additional information about your insurance needs. </p>
+      <% else %>
+        <i class="fa-solid fa-ban fa-2xl" style="color: #ffffff;"></i>
+        <h2 class="<%= @message[:status] %>"><%= @message[:text] %></h2>
       <% end %>
     </div>
   </div>
-    <a class="btn btn-pink" href="">Continue</a>
+    <% if %w[success pending].include?(@message[:status]) %>
+      <a class="btn btn-pink" href="/">Continue</a>
+    <% else %>
+      <a class="btn btn-pink" href="/">Try again</a>
+    <% end %>
 </body>
 </html>

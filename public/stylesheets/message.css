@@ -14,7 +14,7 @@ body {
 }
 
 .message-container {
-  width: 600px;
+  width: 700px;
   text-align: center;
   margin: 2rem auto;
 }
@@ -35,7 +35,7 @@ h2 {
   font-weight: 800;
 }
 
-.success {
+.success, .pending {
   background: #33FFCC;
   color: black;
 }
