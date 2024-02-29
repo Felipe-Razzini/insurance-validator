@@ -118,38 +118,3 @@ post '/submit' do
   end
   erb :message
 end
-
-
-
-
-# if !has_insolvency_history && user_is_director
-  #   @message = {
-  #     text: 'Great, your company fully qualifies for insurance! Our team will get in touch with you soon!',
-  #     status: 'success'
-  #   }
-  #   puts "Great, #{company_name} has no insolvency history and #{contact_name} is a director!"
-  # elsif !has_insolvency_history && !user_is_director
-  #   @message = {
-  #     text: 'Your company qualifies for insurance, but we need to confirm a few details! Our team will get in touch with you soon!',
-  #     status: 'pending'
-  #   }
-  #   puts "#{company_name} has no insolvency history, but #{contact_name} is NOT a director!"
-  # elsif has_insolvency_history && user_is_director
-  #   @message = {
-  #     text: 'Your company qualifies for insurance, but we need to confirm a few details! Our team will get in touch with you soon!',
-  #     status: 'pending'
-  #   }
-  #   puts "#{company_name} has insolvency history, but #{contact_name} is a director!"
-  # elsif has_insolvency_history && !user_is_director
-  #   @message = {
-  #     text: 'Sorry, there seems to be an error. Our team will get in touch with you soon!',
-  #     status: 'warning'
-  #   }
-  #   puts "#{company_name} has insolvency history and #{contact_name} is NOT a director!"
-  # else
-  #   @message = {
-  #     text: 'Oops, something went wrong!',
-  #     status: 'warning'
-  #   }
-  #   puts 'Oops, something went wrong!'
-  # end
