@@ -30,7 +30,14 @@ Please note that the `.env` file is included in the `.gitignore` file, so it won
 ## Usage
 1. Start the Sinatra server: `ruby app.rb`
 2. Open your web browser and navigate to: `http://localhost:4567`
-3. If you've made changes to the code and they don't seem to be reflected in the application, or if the application is behaving unexpectedly, try stopping the Sinatra server (press `Ctrl+C` in the terminal where the server is running) and starting it again with `ruby app.rb`.
+3. On the landing page, click the button labeled "Begin with an assessment now". This will lead you to a form.
+4. In the form, type the company registration number and a name. Here are some examples you can use to check different scenarios:
+   - Company number: 08499730, Contact full name: Julie Ann Ashmead
+   - Company number: 08517657, Contact full name: Patrick James Munns
+   - Company number: 08501889, Contact full name: John Smith
+5. After submitting the form, a message will be printed in the terminal where the Sinatra server is running, containing a recommendation on whether to provide insurance or not.
+6. You will also be redirected to a new page in your web browser, which will display a success or error message based on the result of the risk analysis.
+7. If the application is behaving unexpectedly, try stopping the Sinatra server (press `Ctrl+C` in the terminal where the server is running) and starting it again with `ruby app.rb`.
 
 ## License
 This project is licensed under the MIT License.

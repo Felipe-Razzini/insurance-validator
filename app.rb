@@ -61,7 +61,7 @@ post '/submit' do
       officer['name'] == normalized_contact_name(officer['name']) && officer['officer_role'] == 'director'
     end
 
-    ## Credit score calculation below ##
+    ## Risk score calculation below ##
 
     # If the company status is Dissolved, Removed or Closed, the company is automatically disqualified
     if %w[Dissolved Removed Closed].include?(company_status)
@@ -72,7 +72,7 @@ post '/submit' do
       puts "Superscript should not provide insurance because #{company_name} has too many red flags"
     end
 
-    # Each of the following conditions will add a score to the company's credit score, and each condition has a weight
+    # Each of the following conditions will add a score to the company's risk score, and each condition has a weight
     company_status_score = if %w[Active Registered Open].include?(company_status)
                              1.0 * 0.4 # multiplied by 0.4 to give it a weight of 40%
                            else
@@ -93,28 +93,28 @@ post '/submit' do
                              else
                                0
                              end
-    # The final credit score is the sum of all the scores
+    # The final risk score is the sum of all the scores
     company_score = company_status_score + has_insolvency_history_score + has_been_liquidated_score + user_is_director_score
 
-    # The credit score determines if the company qualifies for insurance and the message to be displayed to the user. The message is also printed to the console for debugging purposes
+    # The risk score determines if the company qualifies for insurance and the message to be displayed to the user. The message is also printed to the console for debugging purposes
     if (0.7..1.0).cover?(company_score)
       @message = {
         text: 'Great, your company fully qualifies for insurance! Our team will get in touch with you soon!',
         status: 'success'
       }
-      puts "Insurance should be provided to #{company_name}! The credit score is #{company_score}!"
+      puts "Insurance should be provided to #{company_name}! The risk score is #{company_score}!"
     elsif (0.5...0.7).cover?(company_score)
       @message = {
         text: 'Your company qualifies for insurance, but we need to confirm a few details! Our team will get in touch with you soon!',
         status: 'pending'
       }
-      puts "Before proviging insurance to #{company_name}, it is advisable to confirm some details. The credit score is #{company_score}!"
+      puts "Before proviging insurance to #{company_name}, it is advisable to confirm some details. The risk score is #{company_score}!"
     else
       @message = {
         text: 'Sorry, there seems to be an error.',
         status: 'warning'
       }
-      puts "Superscript should not provide insurance because #{company_name} has too many red flag. The credit score is #{company_score}!"
+      puts "Superscript should not provide insurance because #{company_name} has too many red flags. The risk score is #{company_score}!"
     end
   else
     @message = {
