@@ -39,5 +39,8 @@ Please note that the `.env` file is included in the `.gitignore` file, so it won
 6. You will also be redirected to a new page in your web browser, which will display a success or error message based on the result of the risk analysis.
 7. If the application is behaving unexpectedly, try stopping the Sinatra server (press `Ctrl+C` in the terminal where the server is running) and starting it again with `ruby app.rb`.
 
+## Running Tests
+1. Run the tests: `rspec spec/app_spec.rb`
+
 ## License
 This project is licensed under the MIT License.
