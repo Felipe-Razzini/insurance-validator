@@ -1,13 +1,14 @@
 require 'sinatra'
 require 'rest-client'
 require 'json'
+require_relative 'helpers'
+helpers ContactNameHelper
+helpers UserIsDirectorHelper
+
+# rest of your application code...
 
 get '/' do
   send_file 'views/index.html'
-end
-
-def valid_company_number?(company_number)
-  company_number.match?(/^\d{8}$/)
 end
 
 post '/submit' do
@@ -50,19 +51,14 @@ post '/submit' do
     user_data = JSON.parse(user_response.body)
 
     # Normalize the contact name to match the format of the name from the API
-    def normalized_contact_name(contact_name)
-      split_name = contact_name.split
-      first_name = split_name[0...-1].map(&:capitalize).join(' ')
-      last_name = split_name.last.upcase
-      "#{last_name}, #{first_name}"
-    end
+    # This method was placed in helpers.rb for testing purposes
+    normalized_contact_name(contact_name)
 
-    user_is_director = user_data['items'].any? do |officer|
-      officer['name'] == normalized_contact_name(officer['name']) && officer['officer_role'] == 'director'
-    end
+    # Check if the user is a director of the company
+    # This method was placed in helpers.rb for testing purposes
+    user_is_director?(contact_name, user_data)
 
     ## Risk score calculation below ##
-
     # If the company status is Dissolved, Removed or Closed, the company is automatically disqualified
     if %w[Dissolved Removed Closed].include?(company_status)
       @message = {
@@ -88,7 +84,7 @@ post '/submit' do
                                 else
                                   0
                                 end
-    user_is_director_score = if user_is_director == true
+    user_is_director_score = if user_is_director?(contact_name, user_data) == true
                                1.0 * 0.15 # multiplied by 0.15 to give it a weight of 15%
                              else
                                0
@@ -140,4 +136,8 @@ post '/' do
     status 400
     return 'company_number is not valid'
   end
+end
+
+def valid_company_number?(company_number)
+  company_number.match?(/^\d{8}$/)
 end

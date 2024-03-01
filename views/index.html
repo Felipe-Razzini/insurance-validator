@@ -22,11 +22,11 @@
 <body>
   <div id="app">
     <div id="landing-page" :class="{ blur: showClientForm }">
+      <img class="logo" src="../assets/logo.png" alt="logo">
       <div class="left-column">
         <!-- This div has a background image -->
       </div>
       <div class="right-column">
-        <img class="logo" src="../assets/logo.png" alt="logo">
         <div class="right-column-form">
           <h2>Seeking insurance solutions?</h2>
           <button class="btn btn-pink" v-on:click="displayForm">Begin with an assessment now</button>
@@ -38,16 +38,16 @@
     <div id="client-form" v-show="showClientForm">
       <span v-on:click="hideForm"><strong>x</strong></span>
       <h2 class="mb-4">Please fill in your information</h2>
-      <form action="/submit" method="post">
+      <form action="/submit" method="post" v-on:submit="submitForm">
         <div class="form-group">
           <label for="company-number">Company Registration Number</label>
-          <input type="text" class="form-control" name="company_number" id="company-number" placeholder="Ex: 12345678" pattern="\d{8}" title="Company number must be exactly 8 digits" required>
+          <input v-model="companyNumber" type="text" class="form-control" name="company_number" id="company-number" placeholder="Ex: 12345678" pattern="\d{8}" title="Company number must be exactly 8 digits" required>
         </div>
         <div class="form-group">
           <label for="name">Contact Full Name</label>
-          <input type="text" class="form-control" name="contact_name" id="name" placeholder="Ex: Michael Scott" required>
+          <input v-model="contactName" type="text" class="form-control" name="contact_name" id="name" placeholder="Ex: Michael Scott" required>
         </div>
-        <button v-on:click="isLoading = true" type="submit" class="btn btn-pink">Submit</button>
+        <button type="submit" class="btn btn-pink">Submit</button>
       </form>
       <div class="loading-overlay" v-show="isLoading">
         <div class="loading-spinner"></div>

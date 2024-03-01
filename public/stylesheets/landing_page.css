@@ -1,6 +1,7 @@
 #landing-page {
   display: flex;
   height: 100vh;
+  position: relative;
 }
 
 .left-column {
@@ -16,7 +17,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .right-column h2 {
@@ -40,6 +40,17 @@
   top: 0;
   right: 0;
   margin: 20px 20px 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+  #landing-page {
+    flex-direction: column;
+  }
+
+  .left-column, .right-column {
+    flex: 100%;
+  }
 }
 
 .blur {

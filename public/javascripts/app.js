@@ -4,7 +4,9 @@ createApp({
   data() {
     return {
       showClientForm: false,
-      isLoading: false
+      isLoading: false,
+      companyNumber: '',
+      contactName: ''
     }
   },
   methods: {
@@ -26,5 +28,15 @@ createApp({
         form.classList.remove('show');
       }
     },
+    submitForm() {
+        if (!this.companyNumber || !this.contactName) {
+          this.isLoading = false;
+        } else {
+          this.isLoading = true;
+          this.$nextTick(() => {
+            this.$el.querySelector('form').submit();
+          });
+      }
+    }
   }
 }).mount('#app')
