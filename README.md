@@ -1,4 +1,4 @@
-# Superscript Coding Test - Felipe Razzini
+# Insurance Validator
 
 This is a simple application that allows users to check if their company qualifies for insurance. It uses Ruby, HTML, CSS, Vue JS, and Sinatra for the server.
 
@@ -8,8 +8,8 @@ This is a simple application that allows users to check if their company qualifi
 - Bundler: This application uses Bundler to manage Ruby gems. You can check if you have Bundler installed by running `bundler -v` in your terminal. If you don't have Bundler installed, you can install it by running `gem install bundler`.
 
 ## Instalation
-1. Clone the repository: `git clone git@github.com:Felipe-Razzini/superscript-coding-test.git`
-2. Navigate to the project directory: `cd superscript-coding-test`
+1. Clone the repository: `git clone git@github.com:Felipe-Razzini/insurance-validator.git`
+2. Navigate to the project directory: `cd insurance-validator`
 3. Install the required gems: `bundle install`
 
 ## API Key

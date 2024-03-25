@@ -65,7 +65,7 @@ post '/submit' do
         text: 'Sorry, there seems to be an error.',
         status: 'warning'
       }
-      puts "Superscript should not provide insurance because #{company_name} has too many red flags"
+      puts "Insurtech should not provide insurance because #{company_name} has too many red flags"
     end
 
     # Each of the following conditions will add a score to the company's risk score, and each condition has a weight
@@ -110,7 +110,7 @@ post '/submit' do
         text: 'Sorry, there seems to be an error.',
         status: 'warning'
       }
-      puts "Superscript should not provide insurance because #{company_name} has too many red flags. The risk score is #{company_score}!"
+      puts "Insurtech should not provide insurance because #{company_name} has too many red flags. The risk score is #{company_score}!"
     end
   else
     @message = {
